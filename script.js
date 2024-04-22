@@ -10,6 +10,7 @@ var timer;
 var testBox;
 var dropTimer;
 var presents = new Array(0); // empty array
+var score = 0;
 
 
 
@@ -83,17 +84,21 @@ function play() {
     
     if(presents[i].y > height){
       presents.splice(i, 1); // remove from array
+      score --;
     }
     
     let d = dist(presents[i].x, presents[i].y, player1.x, player1.y);
     if(d < 50){
       presents.splice(i, 1);
+      score ++;
     }
 
   } // end of for() loop
   
-  text("elapsed time: " + timer.elapsedTime, width/2, height - 20);
+  text("Elapsed Time: " + timer.elapsedTime, width/2, height - 20);
+  text("Score: " + score, 30, 40);
 }
+
 
 
 function gameOver() {
@@ -103,6 +108,7 @@ function gameOver() {
   textAlign(CENTER);
   textSize(16);
   text("Game Over!", width / 2, height / 2);
+  text("Your Final Score: " + score, width/2, height * 2/3);
 }
 
 
@@ -112,6 +118,7 @@ function mousePressed() {
     gameState = "play";
     timer.start();
     dropTimer.start();
+    score = 0; // resets score
   } else if (gameState == "play") {
   //  gameState = "gameOver"; // Corrected assignment
   } else if (gameState == "gameOver") {
