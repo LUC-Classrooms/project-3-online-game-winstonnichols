@@ -101,42 +101,42 @@ function mousePressed() {
 
 
 function keyPressed() {
- switch(keyCode){
-    case UP_ARROW:
-      console.log("up");
-      player1.y -= 30 // move up 30px
-      player1.angle = 0; // no rotation
-      if(player1.y < 0) {
-        player1.y = height; // wrap to bottom
-      }
-      break;
-    case DOWN_ARROW:
-      console.log("down");
-      player1.y += 30 // move down 30px
-      player1.angle = PI ; // point down (rotate 180 deg.)
-      if(player1.y > height) {
-        player1.y = 0; // wrap to top
-      }
-      break;
-    case LEFT_ARROW:
-      console.log("left");
-      player1.x -= 30;
-      player1.angle = PI + HALF_PI;
-      if(player1.x < 0);
-      {
-        player1.x = width;
-      }
-      break;
-    case RIGHT_ARROW:
-      console.log("right");
-      player1.x += 30;
-      player1.angle = HALF_PI;
-      if(player1.x > width);{
-        player1.x = 0;
-      }
-      break;
-    default:
-      console.log("use the arrow keys to move");
-  }
-}
+  switch(keyCode){
+     case UP_ARROW:
+       console.log("up");
+       player1.y -= 30; // move up 30px
+       player1.angle = 0; // no rotation
+       if(player1.y < 0) {
+         player1.y = height; // wrap to bottom
+       }
+       break;
+     case DOWN_ARROW:
+       console.log("down");
+       player1.y += 30; // move down 30px
+       player1.angle = PI ; // point down (rotate 180 deg.)
+       if(player1.y > height) {
+         player1.y = 0; // wrap to top
+       }
+       break;
+     case LEFT_ARROW:
+       console.log("left");
+       player1.x -= 30;
+       player1.angle = PI + HALF_PI;
+       if(player1.x < 0)
+       {
+         player1.x = width;
+       }
+       break;
+     case RIGHT_ARROW:
+       console.log("right");
+       player1.x += 30;
+       player1.angle = HALF_PI;
+       if(player1.x > width){
+         player1.x = 0;
+       }
+       break;
+     default:
+       console.log("use the arrow keys to move");
+   }
+ }
 
