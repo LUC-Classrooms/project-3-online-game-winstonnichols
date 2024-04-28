@@ -19,7 +19,7 @@ function setup() {
   createCanvas(600, 400);
   player1 = new Player(width/2, height * 4/5);
   testBox = new Box(width/2, height/3);
-  timer = new Timer(10000); // 10 second timer
+  timer = new Timer(30000); // 30 second timer
   dropTimer = new Timer(1000); // 1 second timer for dropping presents
 }
 
